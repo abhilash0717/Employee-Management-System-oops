@@ -1,8 +1,14 @@
+import java.io.IOException;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class Main {
-	public static void main(String[] args) {
+
+	public static void main(String[] args) throws IOException {
 		boolean Continue = true;
+		EmployeeDetails emd = new EmployeeDetails();
+		ReadingData data = new ReadingData();
+
 		//to continue till the user exits the console
 		while (Continue) {
 			Scanner sc = new Scanner(System.in);
@@ -23,12 +29,14 @@ public class Main {
 			switch (choice) {
 				case 1:
 					//adding an employee
-					EmployeeDetails emd = new EmployeeDetails();
-					emd.Details();
+					String isSaved = emd.Details();
+					System.out.println(isSaved);
 					Continue = true;
 					break;
 				case 2:
 					//seeing the employee details
+					String employeeFound = data.details();
+					System.out.println(employeeFound);
 					Continue = true;
 					break;
 				case 3:
