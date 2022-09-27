@@ -1,5 +1,6 @@
 //this class has the code which will take the employee data
 //and put it in a file
+import java.io.File;
 import java.io.IOException;
 import java.io.FileWriter; //import for file operations
 import java.util.HashSet;
@@ -15,8 +16,10 @@ public class AddDetails {
                 "phoneNumber : " + phoneNumber + "\n" + "\n";
 
         try{
-            if(!ids.contains(employeeId)){
-                String fileName = "C:/Users/Avinash S/Desktop/ABHI/" + "ID" + employeeId  + ".txt";
+            String fileName = "C:/Users/Avinash S/Desktop/ABHI/" + "ID" + employeeId  + ".txt";
+            File file = new File(fileName);
+            if(!file.exists()){
+
 
                 FileWriter fWriter = new FileWriter(fileName);
 

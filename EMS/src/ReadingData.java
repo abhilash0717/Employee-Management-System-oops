@@ -5,11 +5,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class ReadingData {
-
-    String name;
     int employeeId;
-    String address;
-    long phoneNumber;
 
     FileReader fr;
 
@@ -35,12 +31,11 @@ public class ReadingData {
                 while ((i = fr.read()) != -1)
                     // Print all the content of a file
                     System.out.print((char)i);
+
+                fr.close();
             }else{
                 return "\nEmployee with ID : " + employeeId + " is not available";
             }
-        }
-        catch(FileNotFoundException e){
-            return "\nEmployee with ID : " + employeeId + " is not available";
         }
         catch (Exception e){
             return "\nEmployee with ID : " + employeeId + " is not available";

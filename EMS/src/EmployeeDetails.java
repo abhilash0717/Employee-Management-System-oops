@@ -8,7 +8,7 @@ public class EmployeeDetails {
 	String address;
 	long phoneNumber;
 
-	HashSet<Integer> ids = new HashSet<Integer>();
+	public static HashSet<Integer> ids = new HashSet<Integer>();
 
 	public String Details() throws IOException {
 		Scanner sc = new Scanner(System.in);

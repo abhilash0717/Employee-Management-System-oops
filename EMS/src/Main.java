@@ -8,6 +8,7 @@ public class Main {
 		boolean Continue = true;
 		EmployeeDetails emd = new EmployeeDetails();
 		ReadingData data = new ReadingData();
+		RemovingEmployee RM = new RemovingEmployee();
 
 		//to continue till the user exits the console
 		while (Continue) {
@@ -41,6 +42,8 @@ public class Main {
 					break;
 				case 3:
 					//removing an employee details
+					String employeeRemoved = RM.removeEmployee();
+					System.out.println(employeeRemoved);
 					Continue = true;
 					break;
 				case 4:
@@ -60,4 +63,5 @@ public class Main {
 		}
 
 	}
+
 }
