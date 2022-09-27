@@ -24,9 +24,6 @@ public class RemovingEmployee {
         if(fileName.exists()) {
             fileName.delete();
             EmployeeDetails.ids.remove(employeeId);
-            for(Integer i : EmployeeDetails.ids){
-                log.info( " i");
-            }
             return "\n Employee removed successfully : " + employeeId + "";
         }
 
