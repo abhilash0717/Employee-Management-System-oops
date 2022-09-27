@@ -1,20 +1,28 @@
+import java.io.IOException;
+import java.util.HashSet;
 import java.util.Scanner;
 
 public class EmployeeDetails {
-	String Name;
-	String EmployeeId;
+	String name;
+	int employeeId;
 	String address;
-	Double PhoneNumber;
+	long phoneNumber;
 
-	public void Details() {
+	public static HashSet<Integer> ids = new HashSet<Integer>();
+
+	public String Details() throws IOException {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Enter Employee Name : ");
-		Name = sc.nextLine();
+		name = sc.nextLine();
 		System.out.print("Enter Employee ID : ");
-		EmployeeId = sc.nextLine();
+		employeeId = sc.nextInt();
 		System.out.println("Enter Employee Address : ");
-		address = sc.nextLine();
+		address = sc.next();
 		System.out.println("Enter Employee PhoneNumber : ");
-		PhoneNumber = sc.nextDouble();
+		phoneNumber = sc.nextLong();
+
+		AddDetails addDetails = new AddDetails();
+		String isSuccess = addDetails.addDetailsToFile(name, employeeId, address, phoneNumber, ids);
+		return isSuccess;
 	}
 }
