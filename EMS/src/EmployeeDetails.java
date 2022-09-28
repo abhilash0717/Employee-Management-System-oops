@@ -11,15 +11,20 @@ public class EmployeeDetails {
 	public static HashSet<Integer> ids = new HashSet<Integer>();
 
 	public String Details() throws IOException {
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter Employee Name : ");
-		name = sc.nextLine();
-		System.out.print("Enter Employee ID : ");
-		employeeId = sc.nextInt();
-		System.out.println("Enter Employee Address : ");
-		address = sc.next();
-		System.out.println("Enter Employee PhoneNumber : ");
-		phoneNumber = sc.nextLong();
+		try{
+			Scanner sc = new Scanner(System.in);
+			System.out.print("Enter Employee Name : ");
+			name = sc.nextLine();
+			System.out.print("Enter Employee ID : ");
+			employeeId = sc.nextInt();
+			System.out.println("Enter Employee Address : ");
+			address = sc.next();
+			System.out.println("Enter Employee PhoneNumber : ");
+			phoneNumber = sc.nextLong();
+		}catch (Exception e){
+			System.out.println("Please enter a valid input details");
+		}
+
 
 		AddDetails addDetails = new AddDetails();
 		String isSuccess = addDetails.addDetailsToFile(name, employeeId, address, phoneNumber, ids);

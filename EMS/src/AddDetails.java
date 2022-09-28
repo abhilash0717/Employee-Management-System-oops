@@ -35,7 +35,7 @@ public class AddDetails {
             }else{
                 return "\nCannot add the employee as the Employee data is already present in the file.";
             }
-        }catch (IOException e) {
+        }catch (Exception e) {
             return "\nFailed to save the details of the employee.. Try again later";
         }
 
