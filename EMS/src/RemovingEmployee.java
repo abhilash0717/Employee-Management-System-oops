@@ -9,11 +9,13 @@ public class RemovingEmployee {
     Logger log = Logger.getLogger(RemovingEmployee.class.getName());
 
     public String removeEmployee()  {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter Employee ID : ");
-        employeeId = sc.nextInt();
-
-
+        try{
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter Employee ID : ");
+            employeeId = sc.nextInt();
+        }catch(Exception e){
+            System.out.println("Please enter a valid input details");
+        }
         String employeeRemoved = remove(employeeId);
         return employeeRemoved;
     }

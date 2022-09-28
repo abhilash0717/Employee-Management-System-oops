@@ -10,9 +10,13 @@ public class ReadingData {
     FileReader fr;
 
     public String details() throws IOException {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter Employee ID : ");
-        employeeId = sc.nextInt();
+        try{
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Enter Employee ID : ");
+            employeeId = sc.nextInt();
+        }catch(Exception e){
+            System.out.println("Please enter a valid input details");
+        }
 
 
         String employeeFound = getEmployeeDetails(employeeId);
