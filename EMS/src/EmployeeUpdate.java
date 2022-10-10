@@ -3,6 +3,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+//  To update a employee details which are present in list
 public class EmployeeUpdate {
 	public void updateFile(String s, String o, String n) throws IOException {
 		File file = new File("file" + s + ".txt");
